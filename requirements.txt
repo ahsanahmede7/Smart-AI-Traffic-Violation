@@ -27,3 +27,4 @@ reportlab
 
 # OPTIONAL: read number-plate text (large download, accuracy not guaranteed)
 # easyocr
+# gunicorn
