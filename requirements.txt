@@ -1,13 +1,29 @@
+# Smart Traffic AI - Python packages (Python 3.10 - 3.12)
+# Install:  pip install -r requirements.txt
+
+# AI / video
 ultralytics
 opencv-python
 numpy
+
+# Backend API
 fastapi
 uvicorn[standard]
+python-multipart
+pydantic
+python-dotenv
+
+# Database (dnspython is needed for mongodb+srv:// Atlas links)
 pymongo
+dnspython
+
+# Security
 pyjwt
 bcrypt
-python-dotenv
-pydantic
+
+# Prediction and PDF challan / report
 scikit-learn
 reportlab
-python-multipart
+
+# OPTIONAL: read number-plate text (large download, accuracy not guaranteed)
+# easyocr
