@@ -1,0 +1,13 @@
+ultralytics
+opencv-python
+numpy
+fastapi
+uvicorn[standard]
+pymongo
+pyjwt
+bcrypt
+python-dotenv
+pydantic
+scikit-learn
+reportlab
+python-multipart

@@ -1,0 +1,5 @@
+path: ../data/merged
+train: images/train
+val: images/val
+test: images/test
+names: {0: person, 1: helmet, 2: no_helmet, 3: car, 4: motorcycle, 5: bus, 6: truck, 7: traffic_light}

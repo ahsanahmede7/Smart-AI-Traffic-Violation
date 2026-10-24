@@ -1,0 +1,31 @@
+{
+  "_readme": "Fine schedule used by the challan PDF and dashboard. Edit amounts here when the law changes (no code change needed). Choose the region with the FINE_REGION environment variable (sindh or punjab). VERIFY with the official notification before issuing real challans.",
+  "regions": {
+    "sindh": {
+      "name": "Sindh (Karachi)",
+      "currency": "PKR",
+      "verified": "2026-10-24",
+      "source": "Sindh Twelfth Schedule, Motor Vehicles Ordinance 1965 s.121-A, as published by Times of Karachi (3 Oct 2025, page updated Jul 2026). Seat belt: Sindh Police e-challan reports.",
+      "classes": {"motorcycle": "mc", "car": "car", "emv": "car", "rikshaw": "ltv", "bus": "ltv", "htv": "htv", "truck": "htv"},
+      "fines": {
+        "No Helmet": {"law": "Riding motorcycle without safety helmet (pillion included)", "amounts": {"mc": 5000}, "points": 6},
+        "Red Light": {"law": "Violation of traffic signals", "amounts": {"mc": 5000, "car": 10000, "ltv": 15000, "htv": 20000}, "points": 4},
+        "Wrong Way": {"law": "Driving on the wrong side of the road", "amounts": {"mc": 5000, "car": 10000, "ltv": 15000, "htv": 20000}, "points": 6, "note": "Wrong way in a one-way street is higher (mc 25,000 / car 30,000 / LTV 50,000 / HTV 100,000)."},
+        "No Seat Belt": {"law": "Seat belt (not a separate line in the schedule; charged as a general violation)", "amounts": {"car": 10000, "ltv": 15000, "htv": 20000}, "points": null, "note": "Reported e-challan rate for cars: PKR 10,000."}
+      }
+    },
+    "punjab": {
+      "name": "Punjab",
+      "currency": "PKR",
+      "verified": "2026-10-24",
+      "source": "Secondary sources on the Punjab 12th Schedule 2025 / Fourth Amendment Ordinance 2025 (caradvisers.com, dailypakistan.com.pk). Less reliable: verify with Punjab Traffic Police.",
+      "classes": {"motorcycle": "mc", "rikshaw": "w3", "car": "car", "emv": "car"},
+      "fines": {
+        "No Helmet": {"law": "Riding motorcycle without helmet", "amounts": {"mc": 2000}, "points": 2},
+        "Red Light": {"law": "Signal violation", "amounts": {"mc": 3000, "w3": 3000, "car": 5000}, "points": 4},
+        "Wrong Way": {"law": "Wrong-way driving", "amounts": {"mc": 3000, "w3": 3000, "car": 5000}, "points": 3},
+        "No Seat Belt": {"law": "Seat belt", "amounts": {}, "points": null, "note": "Amount not confirmed."}
+      }
+    }
+  }
+}
