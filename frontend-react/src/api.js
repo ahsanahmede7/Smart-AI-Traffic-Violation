@@ -1,5 +1,5 @@
 import {useEffect,useState} from "react";
-const API=import.meta.env.BACKEND||"http://127.0.0.1:8000";
+const API = import.meta.env.VITE_BACKEND || "http://127.0.0.1:8000";
 export const getToken=()=>sessionStorage.getItem("tok");
 export const evidenceUrl=n=>n?`${API}/evidence/${encodeURIComponent(n)}`:null;
 export const toDate=t=>new Date(/Z|\+/.test(t)?t:t+"Z");
