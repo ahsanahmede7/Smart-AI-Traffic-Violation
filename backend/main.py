@@ -18,9 +18,10 @@ app = FastAPI(title="Smart Traffic AI")
 raw_origins = os.getenv("CORS_ORIGINS", "*")
 origins = [o.strip() for o in raw_origins.split(",") if o.strip()] if raw_origins != "*" else ["*"]
 
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins if origins else ["*"],
+    allow_origins=["*"],  # Sabhi origins ko allow karega (Vercel, Localhost, etc.)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
