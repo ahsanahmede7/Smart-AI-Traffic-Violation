@@ -72,10 +72,9 @@ def one_v(vid: str, _=Depends(auth)):
     if not d: 
         raise HTTPException(404, "Not found")
     return ser(d)
-
 def by_type(): 
-    return {r["_id"]: r["n"] for r in violations.aggregate([{"$group": {"_id": "$type", "n": {"$sum": 1}}0}]} if r["_id"] is not None} # safe check
-
+    pipeline = [{"$group": {"_id": "$type", "n": {"$sum": 1}}}]
+    return {r["_id"]: r["n"] for r in violations.aggregate(pipeline) if r["_id"] is not None}
 @app.get("/api/statistics")
 def stats(_=Depends(auth)):
     t = by_type()
