@@ -5,3 +5,6 @@ __pycache__/
 venv/
 data/
 *.mp4
+node_modules/
+frontend-react/node_modules/
+frontend-react/dist/
