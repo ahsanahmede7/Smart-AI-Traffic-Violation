@@ -6,6 +6,6 @@ export default function Alerts() {
       {r.length === 0 && <Empty>No violations in the last 24 hours.</Empty>}
       {r.map(a => <div className="item" key={a.id}>
         <span><Badge type={a.type} /> &nbsp;Vehicle {a.vehicleId} · {Math.round(a.confidence * 100)}% · {a.location}</span>
-        <span className="muted">{toDate(a.timestamp).toLocaleTimeString()} {a.evidenceImage && <a href={evidenceUrl(a.evidenceImage)} target="_blank" rel="noreferrer">evidence</a>}</span></div>)}
+        <span className="muted">{toDate(a.timestamp).toLocaleTimeString()} {evidenceUrl(a) && <a href={evidenceUrl(a)} target="_blank" rel="noreferrer">evidence</a>}</span></div>)}
     </Card></>;
 }

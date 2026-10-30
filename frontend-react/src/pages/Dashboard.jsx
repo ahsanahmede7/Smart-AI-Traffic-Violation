@@ -16,7 +16,7 @@ export default function Dashboard(){
         <XAxis dataKey="h" tick={{fill:"var(--mut)",fontSize:11}} interval={2} axisLine={false} tickLine={false}/><YAxis allowDecimals={false} tick={{fill:"var(--mut)",fontSize:11}} axisLine={false} tickLine={false} width={28}/>
         <Tooltip/><Area type="monotone" dataKey="n" name="Violations" stroke="#ef4444" strokeWidth={2} fill="url(#g)"/></AreaChart></ResponsiveContainer></div></Card>
       <Card title="Recent Violations">{v.length?v.map(x=><div className="item" key={x.id}><div><Badge type={x.type}/><small className="muted"> ID {x.vehicleId} · {x.location}</small></div>
-        <small className="muted">{toDate(x.timestamp).toLocaleTimeString()}{x.evidenceImage&&<> · <a href={evidenceUrl(x.evidenceImage)} target="_blank" rel="noreferrer">Evidence</a></>}</small></div>)
+        <small className="muted">{toDate(x.timestamp).toLocaleTimeString()}{evidenceUrl(x)&&<> · <a href={evidenceUrl(x)} target="_blank" rel="noreferrer">Evidence</a></>}</small></div>)
         :<Empty>No violations yet. Run the AI pipeline.</Empty>}</Card></div>
     <Card title="Violation distribution">{types.length?<div className="dist"><div style={{height:220,width:220}}><ResponsiveContainer><PieChart><Pie data={types} dataKey="value" innerRadius={55} outerRadius={90} paddingAngle={2}>{types.map((t,i)=><Cell key={t.name} fill={COLORS[i%COLORS.length]}/>)}</Pie><Tooltip/></PieChart></ResponsiveContainer></div>
       <ul>{types.map((t,i)=><li key={t.name}><i style={{background:COLORS[i%COLORS.length]}}/>{t.name}<b>{Math.round(t.value*100/s.total)}%</b></li>)}</ul></div>:<Empty>No data yet.</Empty>}</Card></>;

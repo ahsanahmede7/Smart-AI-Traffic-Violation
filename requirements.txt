@@ -12,6 +12,8 @@ uvicorn[standard]
 python-multipart
 pydantic
 python-dotenv
+cloudinary
+
 
 # Database (dnspython is needed for mongodb+srv:// Atlas links)
 pymongo

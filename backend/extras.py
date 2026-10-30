@@ -12,6 +12,7 @@ from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from backend.db import violations
 from backend.fines import fine_for, config as fine_config
+from backend.cloud_storage import delete_evidence
 
 EVIDENCE = pathlib.Path(__file__).resolve().parents[1] / "evidence"
 
